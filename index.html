@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="記錄每一次程式練習，累積自己的作品與成長。">
+  <title>學習歷程｜程式學習作品集</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="site-nav container" aria-label="主要導覽">
+      <a class="brand" href="#top" aria-label="回到首頁">
+        <span class="brand-mark">&lt;/&gt;</span>
+        <span class="brand-copy">
+          <strong>MY LEARNING JOURNEY</strong>
+          <small>WEB DEVELOPMENT PORTFOLIO</small>
+        </span>
+      </a>
+      <a class="nav-link" href="#learning-timeline">EXPLORE <span aria-hidden="true">↘</span></a>
+    </nav>
+
+    <div class="hero-content container">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> MY PORTFOLIO · 2026</p>
+        <h1>學習歷程<span class="title-period">.</span></h1>
+        <p class="hero-description">
+          從每一次練習開始，記錄程式學習的過程，<br class="desktop-only">
+          累積自己的作品與成長。
+        </p>
+        <a class="primary-button" href="#learning-timeline">
+          探索我的作品 <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+
+      <div class="hero-art" aria-label="蛇與蘋果的裝飾插畫">
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+        <svg class="hero-snake" viewBox="0 0 520 360" role="img" aria-label="螢光綠蛇形插畫">
+          <path class="hero-snake-shadow" d="M90 270 C 80 175, 170 130, 245 185 S 360 260, 390 150 S 330 55, 270 85" />
+          <path class="hero-snake-line" d="M90 270 C 80 175, 170 130, 245 185 S 360 260, 390 150 S 330 55, 270 85" />
+          <g class="snake-head" transform="translate(270 85) rotate(-28)">
+            <rect x="-30" y="-23" width="62" height="46" rx="20" />
+            <circle class="snake-eye" cx="12" cy="-8" r="4" />
+            <circle class="snake-eye" cx="12" cy="8" r="4" />
+          </g>
+          <circle class="snake-segment" cx="330" cy="92" r="13" />
+          <circle class="snake-segment" cx="365" cy="122" r="13" />
+          <circle class="snake-segment" cx="383" cy="166" r="13" />
+          <circle class="snake-segment" cx="371" cy="211" r="13" />
+          <circle class="snake-segment" cx="335" cy="235" r="13" />
+          <circle class="snake-segment" cx="291" cy="220" r="13" />
+          <circle class="snake-segment" cx="250" cy="188" r="13" />
+          <circle class="snake-segment" cx="205" cy="164" r="13" />
+          <circle class="snake-segment" cx="157" cy="173" r="13" />
+        </svg>
+        <div class="hero-apple" aria-hidden="true">
+          <span class="apple-leaf"></span><span class="apple-stem"></span><span class="apple-shape"></span>
+        </div>
+        <span class="art-label label-top">KEEP<br>GROWING</span>
+        <span class="art-label label-bottom">LEVEL 01 <span>● ● ●</span></span>
+      </div>
+
+      <div class="hero-bottom-line">
+        <span>HTML · CSS · JAVASCRIPT · BOOTSTRAP</span>
+        <span>持續學習，持續進步。</span>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#learning-timeline"><span></span> SCROLL TO EXPLORE</a>
+  </header>
+
+  <main id="learning-timeline" class="timeline-section">
+    <div class="container">
+      <section class="section-heading">
+        <p class="eyebrow">MY LEARNING RECORD</p>
+        <h2>學習作品時間軸</h2>
+        <p class="section-description">每一顆蘋果，都是一段學習紀錄。點擊蘋果或作品連結，進入獨立介紹頁。</p>
+        <div class="project-count"><strong>08</strong><span>LEARNING<br>PROJECTS</span></div>
+      </section>
+
+      <section class="snake-timeline" aria-label="八個學習作品">
+        <svg class="timeline-route" id="timelineRouteSvg" viewBox="0 0 1000 2080" preserveAspectRatio="none" aria-hidden="true">
+          <path class="route-shadow" d="M330 120 C330 220 670 250 670 380 S330 520 330 640 S670 780 670 900 S330 1040 330 1160 S670 1300 670 1420 S330 1560 330 1680 S670 1820 670 1960" />
+          <path class="route-line" d="M330 120 C330 220 670 250 670 380 S330 520 330 640 S670 780 670 900 S330 1040 330 1160 S670 1300 670 1420 S330 1560 330 1680 S670 1820 670 1960" />
+          <path class="route-progress" id="snakeProgress" d="M330 120 C330 220 670 250 670 380 S330 520 330 640 S670 780 670 900 S330 1040 330 1160 S670 1300 670 1420 S330 1560 330 1680 S670 1820 670 1960" />
+        </svg>
+        <!-- 蛇頭與蛇身獨立放在上層，抵達蘋果時才不會被節點底色遮住。 -->
+        <svg class="snake-overlay" id="snakeOverlaySvg" viewBox="0 0 1000 2080" preserveAspectRatio="none" aria-hidden="true">
+          <g id="snakeSegments"></g>
+          <g class="moving-snake-head" id="movingSnakeHead">
+            <rect x="-25" y="-18" width="50" height="36" rx="16" />
+            <circle class="moving-snake-eye" cx="10" cy="-7" r="4" />
+            <circle class="moving-snake-eye" cx="10" cy="7" r="4" />
+            <circle class="moving-snake-glint" cx="12" cy="-8" r="1.3" />
+          </g>
+        </svg>
+
+        <article class="timeline-item item-left">
+          <a class="project-node" href="projects/project-01.html" aria-label="開啟作品 01：JS 語法練習 — Open Data 旅遊資料"><span class="node-number">01</span><span class="apple-icon" aria-hidden="true">🍎</span></a>
+          <div class="project-card">
+            <div class="card-meta"><span>JAVASCRIPT</span><small>PROJECT 01</small></div>
+            <p class="card-date">29 SEP 2026</p>
+            <h3>JS 語法練習 — Open Data 旅遊資料</h3>
+            <p>使用 JavaScript 練習讀取旅遊 Open Data，學習資料處理與網頁內容呈現。</p>
+            <div class="card-bottom"><span>JavaScript · JSON</span><a href="projects/project-01.html">查看作品 <b>↗</b></a></div>
+          </div>
+        </article>
+
+        <article class="timeline-item item-right">
+          <a class="project-node" href="projects/project-02.html" aria-label="開啟作品 02：HTML & CSS 排版練習"><span class="node-number">02</span><span class="apple-icon" aria-hidden="true">🍎</span></a>
+          <div class="project-card">
+            <div class="card-meta"><span>WEB DESIGN</span><small>PROJECT 02</small></div>
+            <p class="card-date">日期待確認</p>
+            <h3>HTML &amp; CSS 排版練習</h3>
+            <p>練習 HTML 結構與 CSS 樣式設定，學習如何安排網頁元素及視覺層次。</p>
+            <div class="card-bottom"><span>HTML · CSS</span><a href="projects/project-02.html">查看作品 <b>↗</b></a></div>
+          </div>
+        </article>
+
+        <article class="timeline-item item-left">
+          <a class="project-node" href="projects/project-03.html" aria-label="開啟作品 03：Bootstrap 網頁練習"><span class="node-number">03</span><span class="apple-icon" aria-hidden="true">🍎</span></a>
+          <div class="project-card">
+            <div class="card-meta"><span>BOOTSTRAP</span><small>PROJECT 03</small></div>
+            <p class="card-date">01 OCT 2026</p>
+            <h3>Bootstrap 網頁練習</h3>
+            <p>學習 Bootstrap 的網格系統與常用元件，建立具有響應式能力的網頁。</p>
+            <div class="card-bottom"><span>Bootstrap · RWD</span><a href="projects/project-03.html">查看作品 <b>↗</b></a></div>
+          </div>
+        </article>
+
+        <article class="timeline-item item-right">
+          <a class="project-node" href="projects/project-04.html" aria-label="開啟作品 04：Bootstrap 表格練習"><span class="node-number">04</span><span class="apple-icon" aria-hidden="true">🍎</span></a>
+          <div class="project-card">
+            <div class="card-meta"><span>TABLE</span><small>PROJECT 04</small></div>
+            <p class="card-date">01 OCT 2026</p>
+            <h3>Bootstrap 表格練習</h3>
+            <p>使用 Bootstrap 表格樣式，練習資料排列、表格邊框與互動效果。</p>
+            <div class="card-bottom"><span>Bootstrap · Table</span><a href="projects/project-04.html">查看作品 <b>↗</b></a></div>
+          </div>
+        </article>
+
+        <article class="timeline-item item-left">
+          <a class="project-node" href="projects/project-05.html" aria-label="開啟作品 05：Bootstrap 切版練習"><span class="node-number">05</span><span class="apple-icon" aria-hidden="true">🍎</span></a>
+          <div class="project-card">
+            <div class="card-meta"><span>LAYOUT</span><small>PROJECT 05</small></div>
+            <p class="card-date">06 OCT 2026</p>
+            <h3>Bootstrap 切版練習</h3>
+            <p>練習使用容器、列與欄位進行版面切分，建立清楚且有層次的頁面結構。</p>
+            <div class="card-bottom"><span>Bootstrap · Grid</span><a href="projects/project-05.html">查看作品 <b>↗</b></a></div>
+          </div>
+        </article>
+
+        <article class="timeline-item item-right">
+          <a class="project-node" href="projects/project-06.html" aria-label="開啟作品 06：Bootstrap Table 實作"><span class="node-number">06</span><span class="apple-icon" aria-hidden="true">🍎</span></a>
+          <div class="project-card">
+            <div class="card-meta"><span>TABLE DESIGN</span><small>PROJECT 06</small></div>
+            <p class="card-date">06 OCT 2026</p>
+            <h3>Bootstrap Table 實作</h3>
+            <p>延伸表格版型練習，熟悉表格樣式、資料呈現與排版調整。</p>
+            <div class="card-bottom"><span>Bootstrap · CSS</span><a href="projects/project-06.html">查看作品 <b>↗</b></a></div>
+          </div>
+        </article>
+
+        <article class="timeline-item item-left">
+          <a class="project-node" href="projects/project-07.html" aria-label="開啟作品 07：Ch.8 Forms 表單練習"><span class="node-number">07</span><span class="apple-icon" aria-hidden="true">🍎</span></a>
+          <div class="project-card">
+            <div class="card-meta"><span>FORM VALIDATION</span><small>PROJECT 07</small></div>
+            <p class="card-date">15 OCT 2026</p>
+            <h3>Ch.8 Forms 表單練習</h3>
+            <p>練習基本輸入欄位、下拉選單、checkbox 複選與 radio 單選。</p>
+            <div class="card-bottom"><span>HTML · Bootstrap · JS</span><a href="projects/project-07.html">查看作品 <b>↗</b></a></div>
+          </div>
+        </article>
+
+        <article class="timeline-item item-right">
+          <a class="project-node" href="projects/project-08.html" aria-label="開啟作品 08：AI 表單驗證練習"><span class="node-number">08</span><span class="apple-icon" aria-hidden="true">🍎</span></a>
+          <div class="project-card">
+            <div class="card-meta"><span>FORM PROJECT</span><small>PROJECT 08</small></div>
+            <p class="card-date">27 OCT 2026</p>
+            <h3>AI 表單驗證練習</h3>
+            <p>整理表單驗證邏輯，持續練習 JavaScript 與使用者互動設計。</p>
+            <div class="card-bottom"><span>HTML · CSS · JavaScript</span><a href="projects/project-08.html">查看作品 <b>↗</b></a></div>
+          </div>
+        </article>
+      </section>
+
+      <div class="timeline-end"><span class="finish-star">✦</span><p>TO BE CONTINUED</p><small>下一個蘋果，等待你來收集。</small></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><p class="footer-quote">Every line of code is progress.</p><p>學習沒有終點，讓每一次練習成為下一次進步的起點。</p></div>
+      <a class="back-top" href="#top">BACK TO TOP ↑</a>
+      <small>© 2026 我的學習歷程</small>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
